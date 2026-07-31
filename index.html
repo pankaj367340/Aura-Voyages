@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aura Voyages | Luxury & Adventure Travel</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="logo">Aura Voyages</div>
+    <div class="nav-links">
+      <a href="#destinations">Destinations</a>
+      <a href="#calculator">Trip Planner</a>
+      <a href="#contact" class="btn-primary">Book Now</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Unforgettable Journeys, Tailored for You</h1>
+      <p>Explore handpicked luxury destinations across the globe with seamless custom planning.</p>
+      <a href="#destinations" class="btn-hero">Explore Destinations</a>
+    </div>
+  </header>
+
+  <!-- Destinations Section -->
+  <section id="destinations" class="section">
+    <h2>Curated Destinations</h2>
+    <p class="subtitle">Hand-crafted travel packages designed for immersive experiences.</p>
+    
+    <div class="destination-grid">
+      <div class="card">
+        <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=800&q=80');"></div>
+        <div class="card-body">
+          <h3>Kyoto, Japan</h3>
+          <p>Ancient temples, serene bamboo groves, and authentic tea ceremonies.</p>
+          <span class="price">From $1,800 / week</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=800&q=80');"></div>
+        <div class="card-body">
+          <h3>Amalfi Coast, Italy</h3>
+          <p>Dramatic cliffside villages, turquoise waters, and Mediterranean dining.</p>
+          <span class="price">From $2,400 / week</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1517411032315-54ef2cb783bb?auto=format&fit=crop&w=800&q=80');"></div>
+        <div class="card-body">
+          <h3>Patagonia, Chile</h3>
+          <p>Majestic glaciers, granite peaks, and untouched mountain wilderness.</p>
+          <span class="price">From $2,100 / week</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Budget Calculator -->
+  <section id="calculator" class="section calc-section">
+    <h2>Interactive Trip Estimator</h2>
+    <p class="subtitle">Calculate an estimated budget for your custom trip in real-time.</p>
+
+    <div class="calc-card">
+      <div class="form-group">
+        <label for="destination">Destination</label>
+        <select id="destination" onchange="calculateTotal()">
+          <option value="250">Kyoto, Japan ($250/night)</option>
+          <option value="340">Amalfi Coast, Italy ($340/night)</option>
+          <option value="300">Patagonia, Chile ($300/night)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="travelers">Number of Travelers: <span id="travelers-val">2</span></label>
+        <input type="range" id="travelers" min="1" max="8" value="2" oninput="calculateTotal()">
+      </div>
+
+      <div class="form-group">
+        <label for="days">Duration (Days): <span id="days-val">7</span></label>
+        <input type="range" id="days" min="3" max="21" value="7" oninput="calculateTotal()">
+      </div>
+
+      <div class="form-group">
+        <label for="style">Accommodation Style</label>
+        <select id="style" onchange="calculateTotal()">
+          <option value="1">Standard (4★ Hotel)</option>
+          <option value="1.5" selected>Boutique Luxury (5★ Hotel)</option>
+          <option value="2.2">Ultra-Luxury Villa</option>
+        </select>
+      </div>
+
+      <div class="total-display">
+        Estimated Total: <span id="total-price">$0</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact">
+    <p>&copy; 2026 Aura Voyages. Built for GitHub Pages.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
